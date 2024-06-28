@@ -199,9 +199,9 @@
 	}
 	.mobile-full {
 		transform: rotate(90deg);
-		width: calc(150% + 40px);
+		width: calc(150% + 30px);
 		height: 100%;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: -30%;
 
