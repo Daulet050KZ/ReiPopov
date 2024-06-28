@@ -112,8 +112,9 @@ function handleResize() {
                 fullScreenBtnClose.style.display = 'none'
                 document.querySelector('.fullScreen__window').style.transform = 'rotate(90deg)'
                 document.querySelector('.fullScreen__window').style.width = '180%'
+                document.querySelector('.fullScreen__window').style.marginTop = '-87px'
                 fullScreenBtnZoom.style.position = 'absolute'
-                fullScreenBtnZoom.style.bottom = '20px'
+                fullScreenBtnZoom.style.bottom = '40px'
             }
 
         }
