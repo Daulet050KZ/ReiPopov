@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Flip Book Effect</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        #flipbook-container {
+            width: 80%;
+            height: 80%;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .page {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: white;
+            background-color: #333;
+            transform-origin: left;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+
+        .page:nth-child(1) { background-color: lightcoral; }
+        .page:nth-child(2) { background-color: lightblue; }
+        .page:nth-child(3) { background-color: lightgreen; }
+        .page:nth-child(4) { background-color: lightyellow; }
+        .page:nth-child(5) { background-color: lightpink; }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        #prevBtn {
+            left: 10px;
+        }
+
+        #nextBtn {
+            right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="flipbook-container">
+        <div class="page" id="page1">Page 1</div>
+        <div class="page" id="page2">Page 2</div>
+        <div class="page" id="page3">Page 3</div>
+        <div class="page" id="page4">Page 4</div>
+        <div class="page" id="page5">Page 5</div>
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+    </div>
+
+    <script>
+        const pages = document.querySelectorAll('.page');
+        let currentPageIndex = 0;
+
+        function updatePageVisibility() {
+            pages.forEach((page, index) => {
+                if (index < currentPageIndex) {
+                    page.style.transform = 'rotateY(-180deg)';
+                    page.style.zIndex = pages.length - index;
+                } else if (index === currentPageIndex) {
+                    page.style.transform = 'rotateY(0deg)';
+                    page.style.zIndex = pages.length;
+                } else {
+                    page.style.transform = 'rotateY(0deg)';
+                    page.style.zIndex = index;
+                }
+            });
+        }
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentPageIndex < pages.length - 1) {
+                currentPageIndex++;
+                updatePageVisibility();
+            }
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentPageIndex > 0) {
+                currentPageIndex--;
+                updatePageVisibility();
+            }
+        });
+
+        // Отключаем анимацию для последних двух страниц
+        pages[pages.length - 1].style.transition = 'none';
+        pages[pages.length - 2].style.transition = 'none';
+
+        updatePageVisibility();
+    </script>
+</body>
+</html>
