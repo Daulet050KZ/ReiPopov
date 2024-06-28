@@ -42,7 +42,7 @@ document.querySelectorAll('.item').forEach((item, index) => {
         fullScreen.style.display = '';
         fullScreenImage.src = document.getElementById(`image_${currentImageIndex}`).src;
         updateListItems();
-        document.documentElement.requestFullscreen();
+        // document.documentElement.requestFullscreen();
     });
 });
 
@@ -90,7 +90,7 @@ fullScreenBtnClose.addEventListener('click', () => {
     header.style.display = '';
     body.style.overflow = 'visible';
     fullScreen.style.display = 'none';
-    document.exitFullscreen();
+    // document.exitFullscreen();
 });
 
 function handleResize() {
