@@ -40,7 +40,7 @@ document.querySelectorAll('.item').forEach((item, index) => {
         header.style.display = 'none';
         body.style.overflow = 'hidden';
         fullScreen.style.display = '';
-        alert('Для удобного просмотра, рекомендуем нажать F11! / For convenient viewing, we recommend pressing F11!')
+        alert('Для удобного просмотра, рекомендуем нажать полноэкранный режим! (На телефоне кнопка увеличения)')
         fullScreenImage.src = document.getElementById(`image_${currentImageIndex}`).src;
         updateListItems();
         // document.documentElement.requestFullscreen();
@@ -107,6 +107,7 @@ function handleResize() {
                 document.querySelector('.fullScreen__window').style.width = ''
                 fullScreenBtnZoom.style.position = ''
                 fullScreenBtnZoom.style.bottom = ''
+                document.exitFullscreen();
             }else{
                 fullScreenBtnZoom.style.backgroundColor = 'rgb(255, 190, 65)';
                 fullScreenBtnClose.style.display = 'none'
@@ -115,6 +116,7 @@ function handleResize() {
                 document.querySelector('.fullScreen__window').style.marginTop = '-87px'
                 fullScreenBtnZoom.style.position = 'absolute'
                 fullScreenBtnZoom.style.bottom = '40px'
+                document.documentElement.requestFullscreen();
             }
 
         }
