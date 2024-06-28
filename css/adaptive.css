@@ -197,15 +197,6 @@
 	    align-items: center;
 	    padding: 10px;
 	}
-	.mobile-full {
-		transform: rotate(90deg);
-		width: calc(150% + 30px);
-		height: 100%;
-		position: fixed;
-		top: 0;
-		left: -30%;
-
-	}
 	.fullScreen__window > img{
 		width: 100%;
 		box-shadow: 0px 4px 8px #000;
