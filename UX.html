@@ -54,30 +54,22 @@
 			<span id="pageSpan">ПОДБОРКА UX LANDING PAGE</span>
 		</div>
 		<div class="container">
-			<a href="UX.html" style="color: #000; margin-bottom: 10px; font-size: 22px; font-weight: 700; display: none;" id="back">
-				<i class="fa-solid fa-arrow-left" style="margin-right: 10px;"></i>Назад
-			</a>
 			<section class="section__1">
 				<div>
-					<div class="block__interactive item" id="EkiDos_preview">
+					<a href="content/UX/Eki-Dos.html" class="block__interactive item" id="EkiDos_preview">
 						<img src="img/UX/Eki-Dos-PREVIEW.png" style="filter: grayscale(0%);" alt="">
 						<h1>ЭКИ ДОС</h1>
-					</div>
-					<div class="block__interactive item" id="Kyrgyztelecom_preview">
+					</a>
+					<a href="content/UX/Kyrgyztelecom.html" class="block__interactive item" id="Kyrgyztelecom_preview">
 						<img src="img/UX/Kyrgyztelecom-PREVIEW.png" style="filter: grayscale(0%);" alt="">
 						<h1>КЫРГЫЗТЕЛЕКОМ</h1>
-					</div>
-					<div class="block__interactive item" id="Library_preview">
+					</a>
+					<a href="content/UX/Library.html" class="block__interactive item" id="Library_preview">
 						<img src="img/UX/Library-PREVIEW.png" style="filter: grayscale(0%);" alt="">
 						<h1>БИБЛИОТЕКА Им.А.Осмонова</h1>
-					</div>
+					</a>
 				</div>
 			</section>
-			<div style="padding: 10px; box-shadow: 0px 4px 8px #000; border-radius: 30px; display: none;" id="UX_Page">
-				<img src="img/UX/Eki-Dos.png" alt="" width="100%" height="100%" style="border-radius: 30px; display: none;" id="Eki-Dos">
-				<img src="img/UX/Kyrgyztelecom.png" alt="" width="100%" height="100%" style="border-radius: 30px; display: none;" id="Kyrgyztelecom">
-				<img src="img/UX/Library.png" alt="" width="100%" height="100%" style="border-radius: 30px; display: none;" id="Library">
-			</div>
 			<div id="pagination"></div>
 		</div>
 	</main>
@@ -98,56 +90,5 @@
 	</div> -->
 	<!-- <script src="js/script.js"></script> -->
 	<script src="js/burger.js"></script>
-	<script>
-		let intro = document.querySelector('.intro')
-		let pageName = document.querySelector('#pageName')
-		let pageSpan = document.querySelector('#pageSpan')
-
-		let section = document.querySelector('.section__1')
-		let EkiDos_preview = document.getElementById('EkiDos_preview')
-		let Kyrgyztelecom_preview = document.getElementById('Kyrgyztelecom_preview')
-		let Library_preview = document.getElementById('Library_preview')
-
-		let UX_Page = document.getElementById('UX_Page')
-		let EkiDos = document.getElementById('Eki-Dos')
-		let Kyrgyztelecom = document.getElementById('Kyrgyztelecom')
-		let Library = document.getElementById('Library')
-
-		EkiDos_preview.addEventListener('click', function(){
-			section.style.display = 'none';
-			UX_Page.style.display = '';
-			EkiDos.style.display = '';
-
-			intro.style.backgroundImage = 'url("img/UX/intro-EkiDos.jpg")'
-			header.style.backgroundImage = 'url("img/UX/intro-EkiDos.jpg")'
-			pageName.innerText = '"ЭКИ ДОС"'
-			pageSpan.innerText = 'СЕТЬ БЫСТРОГО ПИТАНИЯ'
-			document.getElementById('back').style.display = ''
-		});
-
-		Kyrgyztelecom_preview.addEventListener('click', function(){
-			section.style.display = 'none';
-			UX_Page.style.display = '';
-			Kyrgyztelecom.style.display = '';
-
-			intro.style.backgroundImage = 'url("img/UX/intro-Kyrgyztelecom.jpg")'
-			header.style.backgroundImage = 'url("img/UX/intro-Kyrgyztelecom.jpg")'
-			pageName.innerText = '"КЫРГЫЗТЕЛЕКОМ"'
-			pageSpan.innerText = 'ИНТЕРНЕТ-ПРОВАЙДЕР В БИШКЕКЕ'
-			document.getElementById('back').style.display = ''
-		});
-
-		Library_preview.addEventListener('click', function(){
-			section.style.display = 'none';
-			UX_Page.style.display = '';
-			Library.style.display = '';
-
-			intro.style.backgroundImage = 'url("img/UX/intro-Library.jpg")'
-			header.style.backgroundImage = 'url("img/UX/intro-Library.jpg")'
-			pageName.innerText = '"БИБЛИОТЕКА"'
-			pageSpan.innerText = 'НАЦ.БИБЛИОТЕКА А.ОСМОНОВА'
-			document.getElementById('back').style.display = ''
-		});
-	</script>
 </body>
 </html>
