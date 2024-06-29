@@ -102,7 +102,6 @@ function handleResize() {
             if (orientation.includes('portrait')) {
                 fullScreenBtnZoom.style.backgroundColor = '#222';
                 fullScreenBtnClose.style.display = ''
-                document.querySelector('.fullScreen__window').style.transform = ''
                 document.querySelector('.fullScreen__window').style.width = ''
                 document.querySelector('.fullScreen__window').style.marginTop = ''
                 fullScreenBtnZoom.style.position = ''
@@ -111,8 +110,7 @@ function handleResize() {
             } else if (orientation.includes('landscape')) {
                 fullScreenBtnZoom.style.backgroundColor = 'rgb(255, 190, 65)';
                 fullScreenBtnClose.style.display = 'none'
-                document.querySelector('.fullScreen__window').style.transform = 'rotate(90deg)'
-                document.querySelector('.fullScreen__window').style.width = '180%'
+                document.querySelector('.fullScreen__window').style.width = '120%'
                 document.querySelector('.fullScreen__window').style.marginTop = '-87px'
                 fullScreenBtnZoom.style.position = 'absolute'
                 fullScreenBtnZoom.style.bottom = '40px'
