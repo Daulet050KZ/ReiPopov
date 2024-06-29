@@ -1,5 +1,6 @@
 #burger {
     display: block;
+    overflow: scroll;
 
     position: absolute;
     top: 0;
@@ -19,7 +20,7 @@
 #burger > ul > li > a {
     width: calc(100% - 10px);
     height: calc(100vh / 11);
-    /*margin: 0 5px;*/
+    margin: 0 5px;
     display: flex;
     justify-content: center;
     align-items: center;
