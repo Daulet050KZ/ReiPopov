@@ -151,13 +151,15 @@ header {
 .section__2 > h1,
 .section__3 > h1,
 .section__4 > h1 {
-	display: none;
+	/*display: none;*/
     /*font-family: 'Open Sans', Sans-serif;*/
     font-size: 46px;
     line-height: 1.1;
     color: #111111;
     font-weight: 700;
     text-transform: uppercase;
+    text-align: center;
+
     margin-bottom: 10px;
 }
 .section__1 > div {
