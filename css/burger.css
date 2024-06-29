@@ -20,7 +20,7 @@
 #burger > ul > li,
 #burger > ul > li > a {
     width: calc(100% - 10px);
-    height: calc(100vh / 11);
+    height: calc(100vh / 12);
     margin: 0 5px;
     display: flex;
     justify-content: center;
