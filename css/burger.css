@@ -1,6 +1,7 @@
 #burger {
-    display: block;
-    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
 
     position: absolute;
     top: 0;
