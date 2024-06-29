@@ -94,8 +94,11 @@ function handleResize() {
     if (window.matchMedia('(max-width: 1023px)').matches) {
 		const diagramm_photoshop = document.querySelector('.section__diagramm.Photoshop').querySelector('.diagramm')
 		const diagramm_illustrator = document.querySelector('.section__diagramm.Illustrator').querySelector('.diagramm')
-		const diagramm_figma = document.querySelector('.section__diagramm.Figma').querySelector('.diagramm')
 		const diagramm_corelDraw = document.querySelector('.section__diagramm.CorelDraw').querySelector('.diagramm')
+		const diagramm_figma = document.querySelector('.section__diagramm.Figma').querySelector('.diagramm')
+		const diagramm_indesign = document.querySelector('.section__diagramm.InDesign').querySelector('.diagramm')
+		const diagramm_blender = document.querySelector('.section__diagramm.Blender').querySelector('.diagramm')
+
 		var prevScrollpos = window.pageYOffset;
 		window.onscroll = function() {
 			var currentScrollPos = window.pageYOffset;
@@ -117,6 +120,12 @@ function handleResize() {
 				setTimeout(() => {
 					diagramm_figma.style.width = '70%'
 				}, 100);
+				setTimeout(() => {
+					diagramm_indesign.style.width = '60%'
+				}, 100);
+				setTimeout(() => {
+					diagramm_blender.style.width = '50%'
+				}, 100);
 			}else {
 				setTimeout(() => {
 					diagramm_photoshop.style.width = '0%'
@@ -129,6 +138,12 @@ function handleResize() {
 				}, 100);
 				setTimeout(() => {
 					diagramm_corelDraw.style.width = '0%'
+				}, 100);
+				setTimeout(() => {
+					diagramm_indesign.style.width = '0%'
+				}, 100);
+				setTimeout(() => {
+					diagramm_blender.style.width = '0%'
 				}, 100);
 			}
 		}
@@ -176,8 +191,11 @@ function handleResize() {
     } else {
 		const diagramm_photoshop = document.querySelector('.section__diagramm.Photoshop').querySelector('.diagramm')
 		const diagramm_illustrator = document.querySelector('.section__diagramm.Illustrator').querySelector('.diagramm')
-		const diagramm_figma = document.querySelector('.section__diagramm.Figma').querySelector('.diagramm')
 		const diagramm_corelDraw = document.querySelector('.section__diagramm.CorelDraw').querySelector('.diagramm')
+		const diagramm_figma = document.querySelector('.section__diagramm.Figma').querySelector('.diagramm')
+		const diagramm_indesign = document.querySelector('.section__diagramm.InDesign').querySelector('.diagramm')
+		const diagramm_blender = document.querySelector('.section__diagramm.Blender').querySelector('.diagramm')
+		
 		var prevScrollpos = window.pageYOffset;
 		window.onscroll = function() {
 			var currentScrollPos = window.pageYOffset;
@@ -199,6 +217,12 @@ function handleResize() {
 				setTimeout(() => {
 					diagramm_figma.style.height = '70%'
 				}, 100);
+				setTimeout(() => {
+					diagramm_indesign.style.height = '60%'
+				}, 100);
+				setTimeout(() => {
+					diagramm_blender.style.height = '50%'
+				}, 100);
 			}else {
 				setTimeout(() => {
 					diagramm_photoshop.style.height = '0%'
@@ -211,6 +235,12 @@ function handleResize() {
 				}, 100);
 				setTimeout(() => {
 					diagramm_corelDraw.style.height = '0%'
+				}, 100);
+				setTimeout(() => {
+					diagramm_indesign.style.height = '0%'
+				}, 100);
+				setTimeout(() => {
+					diagramm_blender.style.height = '0%'
 				}, 100);
 			}
 		}
