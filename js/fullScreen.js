@@ -100,9 +100,23 @@ function handleResize() {
             const orientation = window.screen.orientation.type;
             // const photo = document.getElementById('photo');
             if (orientation.includes('portrait')) {
-                document.querySelector('.fullScreen__window').style.transform = 'rotate(0deg)';
+                fullScreenBtnZoom.style.backgroundColor = '#222';
+                fullScreenBtnClose.style.display = ''
+                document.querySelector('.fullScreen__window').style.transform = ''
+                document.querySelector('.fullScreen__window').style.width = ''
+                document.querySelector('.fullScreen__window').style.marginTop = ''
+                fullScreenBtnZoom.style.position = ''
+                fullScreenBtnZoom.style.bottom = ''
+                document.exitFullscreen();
             } else if (orientation.includes('landscape')) {
-                document.querySelector('.fullScreen__window').style.transform = 'rotate(90deg)';
+                fullScreenBtnZoom.style.backgroundColor = 'rgb(255, 190, 65)';
+                fullScreenBtnClose.style.display = 'none'
+                document.querySelector('.fullScreen__window').style.transform = 'rotate(90deg)'
+                document.querySelector('.fullScreen__window').style.width = '180%'
+                document.querySelector('.fullScreen__window').style.marginTop = '-87px'
+                fullScreenBtnZoom.style.position = 'absolute'
+                fullScreenBtnZoom.style.bottom = '40px'
+                document.documentElement.requestFullscreen();
             }
         }
 
