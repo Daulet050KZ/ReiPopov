@@ -96,6 +96,19 @@ fullScreenBtnClose.addEventListener('click', () => {
 
 function handleResize() {
     if (window.matchMedia('(max-width: 1023px)').matches) {
+        function updateOrientation() {
+            const orientation = window.screen.orientation.type;
+            // const photo = document.getElementById('photo');
+            if (orientation.includes('portrait')) {
+                document.querySelector('.fullScreen__window').style.transform = 'rotate(0deg)';
+            } else if (orientation.includes('landscape')) {
+                document.querySelector('.fullScreen__window').style.transform = 'rotate(90deg)';
+            }
+        }
+
+        window.addEventListener('orientationchange', updateOrientation);
+        updateOrientation(); // Initial check
+
         fullScreenBtnZoom.classList.remove('fa-magnifying-glass')
         fullScreenBtnZoom.classList.add('fa-expand')
 
@@ -105,6 +118,7 @@ function handleResize() {
                 fullScreenBtnClose.style.display = ''
                 document.querySelector('.fullScreen__window').style.transform = ''
                 document.querySelector('.fullScreen__window').style.width = ''
+                document.querySelector('.fullScreen__window').style.marginTop = ''
                 fullScreenBtnZoom.style.position = ''
                 fullScreenBtnZoom.style.bottom = ''
                 document.exitFullscreen();
