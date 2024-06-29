@@ -103,15 +103,15 @@ function handleResize() {
                 fullScreenBtnZoom.style.backgroundColor = '#222';
                 fullScreenBtnClose.style.display = ''
                 document.querySelector('.fullScreen__window').style.width = ''
-                document.querySelector('.fullScreen__window').style.marginTop = ''
+                // document.querySelector('.fullScreen__window').style.marginTop = ''
                 fullScreenBtnZoom.style.position = ''
                 fullScreenBtnZoom.style.bottom = ''
                 document.exitFullscreen();
             } else if (orientation.includes('landscape')) {
                 fullScreenBtnZoom.style.backgroundColor = 'rgb(255, 190, 65)';
                 fullScreenBtnClose.style.display = 'none'
-                document.querySelector('.fullScreen__window').style.width = '120%'
-                document.querySelector('.fullScreen__window').style.marginTop = '-87px'
+                document.querySelector('.fullScreen__window').style.width = '80%'
+                // document.querySelector('.fullScreen__window').style.marginTop = '-87px'
                 fullScreenBtnZoom.style.position = 'absolute'
                 fullScreenBtnZoom.style.bottom = '40px'
                 document.documentElement.requestFullscreen();
@@ -121,31 +121,7 @@ function handleResize() {
         window.addEventListener('orientationchange', updateOrientation);
         updateOrientation(); // Initial check
 
-        fullScreenBtnZoom.classList.remove('fa-magnifying-glass')
-        fullScreenBtnZoom.classList.add('fa-expand')
-
-        fullScreenBtnZoom.onclick = function(){
-            if(fullScreenBtnZoom.style.backgroundColor === 'rgb(255, 190, 65)'){
-                fullScreenBtnZoom.style.backgroundColor = '#222';
-                fullScreenBtnClose.style.display = ''
-                document.querySelector('.fullScreen__window').style.transform = ''
-                document.querySelector('.fullScreen__window').style.width = ''
-                document.querySelector('.fullScreen__window').style.marginTop = ''
-                fullScreenBtnZoom.style.position = ''
-                fullScreenBtnZoom.style.bottom = ''
-                document.exitFullscreen();
-            }else{
-                fullScreenBtnZoom.style.backgroundColor = 'rgb(255, 190, 65)';
-                fullScreenBtnClose.style.display = 'none'
-                document.querySelector('.fullScreen__window').style.transform = 'rotate(90deg)'
-                document.querySelector('.fullScreen__window').style.width = '180%'
-                document.querySelector('.fullScreen__window').style.marginTop = '-87px'
-                fullScreenBtnZoom.style.position = 'absolute'
-                fullScreenBtnZoom.style.bottom = '40px'
-                document.documentElement.requestFullscreen();
-            }
-
-        }
+        fullScreenBtnZoom.style.display = 'none'
     } else {
         fullScreenBtnZoom.classList.add('fa-magnifying-glass')
         fullScreenBtnZoom.classList.remove('fa-expand')
