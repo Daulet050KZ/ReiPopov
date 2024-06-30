@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Book Presentation</title>
+    <link rel="stylesheet" href="../../../css/fonts.css">
+    <style>
+        * {
+            font-family: 'Arial';
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        li,
+        ul > li {
+            list-style-type: none;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #222222;
+            width: 100%;
+            height: 39px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            transition: .3s;
+        }
+
+        .navbar > ul {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .navbar > ul > li {
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .navbar > ul > li > a{
+            color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+        }
+        .navbar > ul > li > a:hover {
+            opacity: 1;
+            border-bottom: 2px solid #ffbe41;
+            color: #ffbe41;
+        }
+        #book {
+        }
+        .page {
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: white;
+        }
+        .cover {
+            background-color: #4CAF50;
+        }
+        .page2 {
+            background-color: #FF9800;
+        }
+        .navigation {
+            position: absolute;
+            z-index: 1000;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .arrow {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body style="background-image: url('background.jpg'); background-size: cover;">
+    <header id="header">
+        <img src="../../../img/logo.png" alt="" width="103px" height="24px" style="margin-left: 100px;">
+        <div class="navbar" style="margin-right: 100px;">
+            <ul>
+                <li><a href="../../../index.html">Главная</a></li>
+                <li><a href="../../../ART.html">Арты</a></li>
+                <li><a href="../../../DRAWINGS.html">Рисунки</a></li>
+                <li><a href="../../../3D.html">3D Работы</a></li>
+                <li><a href="../../../DESIGN.html">Оформление</a></li>
+                <li><a href="../../../UX.html">Макеты сайтов</a></li>
+                <li><a href="../../../BOOKDESIGN.html" style="color: #fff; border-bottom: 2px solid #ffbe41; opacity: 1;">Дизайн книги</a></li>
+                <li><a href="../../../LOGO.html">Логотипы</a></li>
+                <li><a href="../../../BLOG.html">Блог</a></li>
+                <li><a href="../../../CONTACTS.html">Контакты</a></li>
+            </ul>
+        </div>
+    </header>
+    <div id="book" style="margin-top: 38px;">
+        <div class="page" style="background-image: url('Page-0.jpg'); background-size: 100% 100%; border-left: 10px solid #222;"></div>
+        <div class="page" style="background-image: url('Page-1.jpg'); background-size: 100% 100%; border-right: 10px solid #222;"></div>
+        <div class="page" style="background-image: url('Page-2.jpg'); background-size: 100% 100%; border-left: 10px solid #222;"></div>
+        <div class="page" style="background-image: url('Page-3.jpg'); background-size: 100% 100%; border-right: 10px solid #222;"></div>
+        <div class="page" style="background-image: url('Page-4.jpg'); background-size: 100% 100%; border-left: 10px solid #222;"></div>
+        <div class="page" style="background-image: url('Page-5.jpg'); background-size: 100% 100%; border-right: 10px solid #222;"></div>
+        <div class="page" style="background-image: url('Page-6.jpg'); background-size: 100% 100%; border-left: 10px solid #222;"></div>
+        <div class="page" style="background-image: url('Page-7.jpg'); background-size: 100% 100%; border-right: 10px solid #222;"></div>
+    </div>
+    <div class="navigation">
+        <button class="arrow" id="prev">&lt;</button>
+        <button class="arrow" id="next">&gt;</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "turn.min.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'turn-js'));
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var checkTurnJsLoaded = setInterval(function() {
+                if (typeof $.fn.turn === 'function') {
+                    clearInterval(checkTurnJsLoaded);
+                    $('#book').turn({
+                        width: "97%",
+                        height: "65.54%",
+                        autoCenter: true
+                    });
+                }
+            }, 0);
+
+            document.getElementById('next').addEventListener('click', function() {
+                $('#book').turn('next');
+            });
+
+            document.getElementById('prev').addEventListener('click', function() {
+                $('#book').turn('previous');
+            });
+        });
+    </script>
+</body>
+</html>
