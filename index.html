@@ -259,7 +259,7 @@
 	</footer>
 
 	<div class="enter__animation" style="background-color: #000; position: absolute; position: fixed; top: 0; left: 0; z-index: 1000; width: 100%; height: 100vh; transition: 1s; display: flex; flex-direction: row; align-items: center; justify-content: center;">
-		<img id="enter__logo" src="img/LogoRei-2.png" alt="" width="100%" height="100%" style="opacity: 0; transition: 1s;">
+		<img id="enter__logo" src="img/LogoRei-2.png" alt="" style="opacity: 0; transition: 1s;">
 	</div>
 
 	<div class="stage__bar">
@@ -275,7 +275,7 @@
 		const body = document.querySelector('#body')
 		const enter__logo = document.querySelector('#enter__logo')
 		const enter__animation = document.querySelector('.enter__animation')
-		
+
 		if (sessionStorage.getItem('welcomeShown')) {
             enter__animation.style.display = 'none';
             body.style.overflowY = 'visible';
