@@ -1,48 +1,6 @@
 const intro = document.querySelector('.intro')
 const header = document.querySelector('#header')
 
-// const diagramm_photoshop = document.querySelector('.section__diagramm.Photoshop').querySelector('.diagramm')
-// const diagramm_illustrator = document.querySelector('.section__diagramm.Illustrator').querySelector('.diagramm')
-// const diagramm_figma = document.querySelector('.section__diagramm.Figma').querySelector('.diagramm')
-// const diagramm_corelDraw = document.querySelector('.section__diagramm.CorelDraw').querySelector('.diagramm')
-// var prevScrollpos = window.pageYOffset;
-// window.onscroll = function() {
-// 	var currentScrollPos = window.pageYOffset;
-// 	if(380 < window.pageYOffset){
-// 		header.style.backgroundColor = '#222222'
-// 	}else{
-// 		header.style.backgroundColor = ''
-// 	}
-// 	if (1700 < window.pageYOffset) {
-// 		setTimeout(() => {
-// 			diagramm_photoshop.style.height = '90%'
-// 		}, 100);
-// 		setTimeout(() => {
-// 			diagramm_illustrator.style.height = '80%'
-// 		}, 100);
-// 		setTimeout(() => {
-// 			diagramm_corelDraw.style.height = '80%'
-// 		}, 100);
-// 		setTimeout(() => {
-// 			diagramm_figma.style.height = '70%'
-// 		}, 100);
-// 	}else {
-// 		setTimeout(() => {
-// 			diagramm_photoshop.style.height = '0%'
-// 		}, 100);
-// 		setTimeout(() => {
-// 			diagramm_illustrator.style.height = '0%'
-// 		}, 100);
-// 		setTimeout(() => {
-// 			diagramm_figma.style.height = '0%'
-// 		}, 100);
-// 		setTimeout(() => {
-// 			diagramm_corelDraw.style.height = '0%'
-// 		}, 100);
-// 	}
-// }
-
-
 document.querySelector('.stage__0').addEventListener('click', function(){
 	document.querySelector('.intro').scrollIntoView({ behavior: 'smooth' });
 });
@@ -297,7 +255,6 @@ function handleResize() {
 		}
     }
 }
-// '#ffbe41' '#bdbdbd'
 // Вызов функции при загрузке страницы
 handleResize();
 
