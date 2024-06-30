@@ -1,8 +1,7 @@
 #burger {
     display: flex;
     flex-direction: column;
-    overflow: auto;
-
+    
     position: absolute;
     top: 0;
     right: 0;
@@ -19,14 +18,15 @@
 }
 #burger > ul {
     height: 100%;
+    overflow: auto;
     display: flex;
     flex-direction: column;
 }
 #burger > ul > li,
 #burger > ul > li > a {
     width: calc(100% - 10px);
-    height: 100%;
-    margin: 5px;
+    height: calc(100% / 12);
+    margin: 0 5px;
     display: flex;
     justify-content: center;
     align-items: center;
