@@ -40,10 +40,9 @@ document.querySelectorAll('.item').forEach((item, index) => {
         header.style.display = 'none';
         body.style.overflow = 'hidden';
         fullScreen.style.display = '';
-        alert('Для удобного просмотра, рекомендуем нажать полноэкранный режим! (На телефоне кнопка увеличения)')
         fullScreenImage.src = document.getElementById(`image_${currentImageIndex}`).src;
         updateListItems();
-        // document.documentElement.requestFullscreen();
+        document.documentElement.requestFullscreen();
     });
 });
 
@@ -56,7 +55,7 @@ fullScreenBtnToLeft.addEventListener('click', () => {
 });
 
 fullScreenBtnToRight.addEventListener('click', () => {
-    if (currentImageIndex < 27) {
+    if (currentImageIndex < 54) {
         currentImageIndex++;
         fullScreenImage.src = document.getElementById(`image_${currentImageIndex}`).src;
         updateListItems();
@@ -71,19 +70,19 @@ listToLeft.addEventListener('click', () => {
         updateListItems();
     }
     for (let i = 1; i <= 9; i++) {
-    	document.getElementById(`list__item-${i}`).classList.remove('active-item');
+        document.getElementById(`list__item-${i}`).classList.remove('active-item');
     }
 });
 
 listToRight.addEventListener('click', () => {
     let startIndex = Math.floor((currentImageIndex - 1) / 9) * 9 + 1;
-    if (startIndex + 9 <= 27) {
+    if (startIndex + 9 <= 54) {
         startIndex += 9;
         currentImageIndex = startIndex;
         updateListItems();
     }
-	for (let i = 1; i <= 9; i++) {
-    	document.getElementById(`list__item-${i}`).classList.remove('active-item');
+    for (let i = 1; i <= 9; i++) {
+        document.getElementById(`list__item-${i}`).classList.remove('active-item');
     }
 });
 
@@ -91,27 +90,24 @@ fullScreenBtnClose.addEventListener('click', () => {
     header.style.display = '';
     body.style.overflow = 'visible';
     fullScreen.style.display = 'none';
-    // document.exitFullscreen();
+    document.exitFullscreen();
 });
 
 function handleResize() {
     if (window.matchMedia('(max-width: 1023px)').matches) {
         function updateOrientation() {
             const orientation = window.screen.orientation.type;
-            // const photo = document.getElementById('photo');
             if (orientation.includes('portrait')) {
                 fullScreenBtnZoom.style.backgroundColor = '#222';
                 fullScreenBtnClose.style.display = ''
                 document.querySelector('.fullScreen__window').style.width = ''
-                // document.querySelector('.fullScreen__window').style.marginTop = ''
                 fullScreenBtnZoom.style.position = ''
                 fullScreenBtnZoom.style.bottom = ''
                 document.exitFullscreen();
             } else if (orientation.includes('landscape')) {
                 fullScreenBtnZoom.style.backgroundColor = 'rgb(255, 190, 65)';
-                fullScreenBtnClose.style.display = 'none'
+                fullScreenBtnClose.style.display = ''
                 document.querySelector('.fullScreen__window').style.width = '80%'
-                // document.querySelector('.fullScreen__window').style.marginTop = '-87px'
                 fullScreenBtnZoom.style.position = 'absolute'
                 fullScreenBtnZoom.style.bottom = '40px'
                 document.documentElement.requestFullscreen();
