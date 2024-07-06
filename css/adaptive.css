@@ -1,0 +1,244 @@
+@media (min-width: 1024px){
+	#nav-icon6 {
+		display: none;
+	}
+	.reviews_btns.other {
+		display: none;
+	}
+}
+@media (min-width: 768px) and (max-width: 1023px){
+
+}
+@media (max-width: 767px){
+	body {
+		max-width: 767px;
+	}
+	body::-webkit-scrollbar {
+		display: none;
+	}
+
+	body::-webkit-scrollbar-track {
+	  display: none;
+	}
+
+	body::-webkit-scrollbar-thumb {
+	  display: none;
+	}
+	header {
+		padding: 0px 5px;
+	}
+	.container {
+		padding: 0;
+	}
+	.navbar {
+		display: none;
+	}
+	.intro > h1 {
+		font-size: 50px;
+	    line-height: 1.1;
+	    color: #fff;
+	    /*font-weight: 700;*/
+	    font-family: 'Unbounded';
+	}
+	.intro > span {
+		font-size: 15px;
+	    line-height: 1.1;
+	    color: #fff;
+	    font-weight: 700;
+	}
+	.section__1,
+	.section__2,
+	.section__3,
+	.section__4 {
+		max-width: 360px;
+	}
+
+	/* ГЛАВНАЯ СТРАНИЦА */
+
+	/*.block__interactive {
+		min-width: 350px;
+		max-width: 350px;
+		border-radius: 30px;
+	    box-shadow: 0px 2px 4px rgb(5, 5, 5, 20%);
+	    margin: 10px;
+	    cursor: pointer;
+	    transition: .5s;
+	    background-color: #fff;
+	    padding: 10px;
+	    overflow: hidden;
+	}*/
+	.section__1 > div {
+		display: flex;
+		flex-direction: column;
+	}
+	.section__1 > div > .block__interactive {
+		margin: 10px 0;
+	}
+
+	.section__2 > div {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		width: 350px;
+	}
+	.section__2 > div > img {
+		width: 100%;
+		height: 100%;
+		margin: 0px 0px 10px 0px;
+	}
+	.section__2 > div > div > p {
+		font-size: 14px;
+	}
+
+	.section__3 > div {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.section__3 > div > div,
+	.section__3-skills {
+		display: flex;
+		flex-direction: column;
+		box-shadow: 0px 4px 6px rgb(5, 5, 5, 20%);
+		padding: 10px;
+		border-radius: 30px;
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		margin: 0 5px;
+	}
+	.section__3 > div > div > span{
+		margin: 0;
+		font-size: 12px;
+	}
+	.section__3 > div > div {
+		margin: 5px 0;
+	}
+	.section__diagramm {
+		display: flex;
+		flex-direction: row-reverse;
+		width: 100%;
+	}
+	.section__diagramm > div{
+		height: 30px;
+		width: 0;
+		border-radius: 30px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		padding: 10px;
+		box-shadow: 0px 0px 4px #393939;
+		transition: .5s;
+	}
+	.section__diagramm > div > img {
+		width: 28.5px;
+		height: 28.5px;
+		border-radius: 30px;
+		box-shadow: 0px 0px 4px #393939;
+	}
+
+
+	.section__4 > div {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		min-width: 350px;
+		max-width: 350px;
+		max-height: 550px;
+		/*overflow: hidden;*/
+		padding-top: 15px;
+	}
+	.section__4 > div > div {
+		height: 500px;
+		max-height: 500px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 20px 0; 
+	}
+	.reviews_btns.PC {
+		display: none;
+	}
+	.reviews_btns.other {
+		display: flex;
+	}
+	.other > label{
+		width: 50px;
+		height: 30px;
+		background-color: #bdbdbd;;
+		border-radius: 10px;
+		box-shadow: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		/*font-weight: 700;*/
+	}
+
+	.stage__bar {
+		display: none;
+	}
+	
+	/* АРТ */
+
+	.fullScreen {
+	    background-color: #00000081;
+	    backdrop-filter: blur(10px);
+	    width: 100%;
+	    height: 100vh;
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	    padding: 10px;
+	}
+	.fullScreen__window > img{
+		width: 100%;
+		box-shadow: 0px 4px 8px #000;
+		z-index: 9;
+		border-radius: 0px;
+	}
+	.fullScreen__window > i:hover{
+		color: #a5a5a5;
+		transform: scale(1);
+	}
+	#fullScreenBtn__close {
+		top: 10px;
+		right: 10px;
+	}
+	.image__list {
+		display: none;
+	}
+
+	/* UX */
+
+	/* BLOG */
+	.blog > div > img {
+		width: 100%;
+		margin: 0px 0px 10px 0px;
+	}
+	.blog > div > div > button {
+		margin: 0 auto;
+	}
+
+	/* CONTACTS */
+	.container.contact {
+		padding: 10px 0px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+
+		background: #D3CCE3;  /* fallback for old browsers */
+		background: -webkit-linear-gradient(to bottom, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to bottom, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	}
+	.email__form > button {
+		opacity: 1;
+	}
+}
