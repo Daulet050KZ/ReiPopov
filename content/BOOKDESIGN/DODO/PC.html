@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Book Presentation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #book {
+        }
+        .page {
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: white;
+        }
+        .cover {
+            background-color: #4CAF50;
+        }
+        .page2 {
+            background-color: #FF9800;
+        }
+        .navigation {
+            position: absolute;
+            z-index: 1000;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .arrow {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body style="background-color: #e65300" style="position: relative;">
+    <!-- <img src="logo.png" alt="" style="position: absolute; transform: translateX(-50%);"> -->
+    <div id="book">
+        <div class="page" style="background-image: url('Page-0.png'); background-size: 100% 100%; border-left: 10px solid #ffbe41;"></div>
+        <div class="page" style="background-image: url('Page-1.png'); background-size: 100% 100%; border-right: 10px solid #ffbe41;"></div>
+        <div class="page" style="background-image: url('Page-2.png'); background-size: 100% 100%; border-left: 10px solid #ffbe41;"></div>
+        <div class="page" style="background-image: url('Page-3.png'); background-size: 100% 100%; border-right: 10px solid #ffbe41;"></div>
+        <div class="page" style="background-image: url('Page-4.png'); background-size: 100% 100%; border-left: 10px solid #ffbe41;"></div>
+        <div class="page" style="background-image: url('Page-5.png'); background-size: 100% 100%; border-right: 10px solid #ffbe41;"></div>
+        <div class="page" style="background-image: url('Page-6.png'); background-size: 100% 100%; border-left: 10px solid #ffbe41;"></div>
+        <div class="page" style="background-image: url('Page-7.png'); background-size: 100% 100%; border-right: 10px solid #ffbe41;"></div>
+        <div class="page" style="background-image: url('Page-8.png'); background-size: 100% 100%; border-left: 10px solid #ffbe41;"></div>
+        <div class="page" style="background-image: url('Page-9.png'); background-size: 100% 100%; border-right: 10px solid #ffbe41;"></div>
+        <div class="page" style="background-image: url('Page-10.png'); background-size: 100% 100%; border-left: 10px solid #ffbe41;"></div>
+    </div>
+    <div class="navigation">
+        <button class="arrow" id="prev">&lt;</button>
+        <button class="arrow" id="next">&gt;</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "turn.min.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'turn-js'));
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var checkTurnJsLoaded = setInterval(function() {
+                if (typeof $.fn.turn === 'function') {
+                    clearInterval(checkTurnJsLoaded);
+                    $('#book').turn({
+                        width: "70.70%",
+                        height: "100%",
+                        autoCenter: true
+                    });
+                }
+            }, 0);
+
+            document.getElementById('next').addEventListener('click', function() {
+                $('#book').turn('next');
+            });
+
+            document.getElementById('prev').addEventListener('click', function() {
+                $('#book').turn('previous');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Брендбук - Кыргызтелеком</title>
+
+	<link rel="stylesheet" href="../../../css/style.css">
+	<link rel="stylesheet" href="../../../css/burger.css">
+	<link rel="stylesheet" href="../../../css/fonts.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
+	<link rel="stylesheet" href="../../../css/adaptive.css">
+	<style>
+		.book {
+			padding: 5px;
+			box-shadow: 0px 4px 8px #000;
+			/*border-radius: 30px;*/
+			display: flex;
+			overflow: hidden;
+		}
+		.book > img {
+			width: 100%;
+			height: 100%;
+			/*border-radius: 30px;*/
+			transition: .3s;
+		}
+		.navigation {
+			display: flex;
+			position: absolute;
+			bottom: 30px;
+		}
+		.navigation > button,
+		.navigation > span{
+			background-color: #222;
+			outline: none;
+			border: none;
+			padding: 10px 25px;
+			font-size: 16px;
+			color: #fff;
+			font-weight: 700;
+			border-radius: 20px;
+		}
+	</style>
+</head>
+<body id="body">
+	<header id="header" style="background-color: #222;">
+		<!-- <h3 style="font-family: ''; color: #ffc800;"><span style="color: #fff; ">REI </span>POPOV</h3> -->
+		<img src="../../../img/logo.png" alt="" width="103px" height="24px">
+		<div id="nav-icon6">
+		    <span></span>
+		</div>
+		<div id="burger">
+			<ul>
+				<li></li>
+				<li><a href="../../../index.html" style="color: #fff; border-bottom: 2px solid #ffbe41; opacity: 1;">Главная</a></li>
+				<li><a href="../../../ART.html">Арты</a></li>
+				<li><a href="../../../DRAWINGS.html">Рисунки</a></li>
+				<li><a href="../../../3D.html">3D Работы</a></li>
+				<li><a href="../../../DESIGN.html">Оформление</a></li>
+				<li><a href="../../../UX.html">Макеты сайтов</a></li>
+				<li><a href="../../../BOOKDESIGN.html">Дизайн книги</a></li>
+				<li><a href="../../../LOGO.html">Логотипы</a></li>
+				<li><a href="../../../BLOG.html">Блог</a></li>
+				<li><a href="../../../CONTACTS.html">Контакты</a></li>
+			</ul>
+		</div>
+	</header>
+	<main id="main" style="width: 100%; height: 100vh;">
+		<div class="container" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;">
+			<a href="../../../BOOKDESIGN.html" style="color: #000; margin: 10px 0; font-size: 22px; font-weight: 700;" id="back">
+				<i class="fa-solid fa-arrow-left" style="margin-right: 10px;"></i>Назад
+			</a>
+			<div class="book">
+				<img src="Page-0.jpg" alt="" id="image-0">
+				<img src="Page-1.jpg" alt="" id="image-1">
+				<img src="Page-2.jpg" alt="" id="image-2">
+				<img src="Page-3.jpg" alt="" id="image-3">
+				<img src="Page-4.jpg" alt="" id="image-4">
+				<img src="Page-5.jpg" alt="" id="image-5">
+				<img src="Page-6.jpg" alt="" id="image-6">
+				<img src="Page-7.jpg" alt="" id="image-7">
+			</div>
+			<div class="navigation">
+				<button id="left"><i class="fa-solid fa-arrow-left"></i></button>
+				<span style="margin: 0 10px;" id="page-num">0</span>
+				<button id="right"><i class="fa-solid fa-arrow-right"></i></button>
+			</div>
+		</div>
+	</main>
+	<footer id="footer">
+		<img src="../../../img/Pod.png" alt="">
+		<div class="contacts">
+			<i class="fa-brands fa-square-facebook"></i>
+			<i class="fa-brands fa-vk"></i>
+			<i class="fa-brands fa-square-behance"></i>
+			<i class="fa-brands fa-square-instagram"></i>
+			<i class="fa-brands fa-google-drive"></i>
+		</div>
+		<span style="color: #fff;">©2023 Portfolio - Все права защищены</span>
+	</footer>
+	<script src="../../../js/burger.js"></script>
+	<script>
+		let image = document.getElementById('image-' + 0)
+		let left = document.getElementById('left')
+		let right = document.getElementById('right')
+
+		let page_num = document.getElementById('page-num')
+
+		image.style.marginLeft = '0%'
+
+		const positions = ['0%', '-100%', '-200%', '-300%', '-400%', '-500%', '-600%', '-700%'];
+
+		left.onclick = function() {
+		    let index = positions.indexOf(image.style.marginLeft);
+		    if (index === -1) return;
+		    index = index > 0 ? index - 1 : 0;
+		    image.style.marginLeft = positions[index];
+		    page_num.innerText = index.toString();
+		}
+
+		right.onclick = function() {
+		    let index = positions.indexOf(image.style.marginLeft);
+		    if (index === -1) return;
+		    index = index < positions.length - 1 ? index + 1 : positions.length - 1;
+		    image.style.marginLeft = positions[index];
+		    page_num.innerText = index.toString();
+		}
+
+	</script>
+</body>
+</html>
